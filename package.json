@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack --color -p --progress"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^6.4.1",
+    "babel-plugin-transform-react-constant-elements": "^6.9.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.16.0",
     "webpack": "^2.2.0-rc.3"
@@ -29,7 +30,23 @@
       ],
       "react",
       "stage-0"
-    ]
+    ],
+    "env": {
+      "production": {
+        "only": [
+          "src"
+        ],
+        "plugins": [
+          "transform-react-constant-elements"
+        ]
+      },
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs",
+          "dynamic-import-node"
+        ]
+      }
+    }
   },
   "dependencies": {
     "babel-preset-stage-0": "^6.16.0",

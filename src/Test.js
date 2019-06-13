@@ -1,20 +1,17 @@
 import React from 'react';
 import { Form } from 'react-final-form';
 
-const AddEditPhoneField = ({
-  phone,
+const Test= ({
+  testProp,
 }) => (
   <Form
     onSubmit={() => {}}
     render={() => (
       <React.Fragment>
-        <span>{phone}</span>
+        <span>{testProp}</span>
       </React.Fragment>
     )}
   />
 );
 
-AddEditPhoneField.propTypes = {
-};
-
-export default AddEditPhoneField;
+export default Test;

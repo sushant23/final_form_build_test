@@ -9,6 +9,7 @@ const Test= ({
     render={() => (
       <React.Fragment>
         <span>{testProp}</span>
+        <hello>hello</hello>
       </React.Fragment>
     )}
   />
